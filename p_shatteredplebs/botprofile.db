@@ -1,0 +1,1753 @@
+//----------------------------------------------------------------------------
+// BotProfile.db
+// Author: Michael S. Booth, Turtle Rock Studios (www.turtlerockstudios.com)
+//
+// This database defines bot "personalities". 
+// Feel free to edit it and define your own bots.
+//
+
+//----------------------------------------------------------------------------
+
+//
+// All profiles begin with this data and overwrite their own
+//
+Default
+	Skill = 100
+	Aggression = 69
+	ReactionTime = 0.4
+	AttackDelay = 0
+	Teamwork = 90
+	AimFocusInitial = 15			// initial focus spread in degrees (from desired center)
+	AimFocusDecay = 0.25			// how much focus shrinks per second (.25 = 25% of size after 1 sec)
+	AimFocusOffsetScale = 0.15		// controls accuracy when tracking to target (0 == perfect, should always be < 1)
+	AimfocusInterval = 0.3			// how often focus is adjusted (smaller intervals means better movement tracking)
+	WeaponPreference = none
+	Cost = 0
+	Difficulty = NORMAL
+	VoicePitch = 100
+	Skin = 0
+	LookAngleMaxAccelNormal = 3000.0
+	LookAngleStiffnessNormal = 150.0
+	LookAngleDampingNormal = 30.0
+	LookAngleMaxAccelAttacking = 3800.0
+	LookAngleStiffnessAttacking = 980.0
+	LookAngleDampingAttacking = 105.0
+End
+
+//----------------------------------------------------------------------------
+
+//
+// These templates inherit from Default and override with their values
+// The name of the template defines a type that is used by individual bot profiles
+//
+// personality templates
+// stats added as a separate template since it would get overwritten by difficulty template
+//
+
+Template SniperPersonality
+	Teamwork = 85
+	Aggression = 70
+	ReactionTime = 0.1
+End
+
+Template RiflePersonality
+	Teamwork = 100
+	Aggression = 80
+End
+
+// used after AUG/SG556 scope patch, to reduce camping for Punch bots
+Template PunchPersonality
+	Teamwork = 95
+	Aggression = 100
+End
+
+Template PowerPersonality
+	Teamwork = 80
+	Aggression = 100
+End
+
+Template AutoSniperPersonality
+	Teamwork = 80
+	Aggression = 50
+	ReactionTime = 0.1
+End
+
+Template ShotgunPersonality
+	Teamwork = 40
+	Aggression = 90
+End
+
+Template SherklasticPersonality
+	Teamwork = 30
+	Aggression = 100
+End
+
+Template PistolierPersonality
+	Teamwork = 40
+	Aggression = 100
+	ReactionTime = 0.15
+End
+
+// weapon preference templates
+Template Rifle	
+	WeaponPreference = m4a1
+	WeaponPreference = ak47
+	WeaponPreference = aug
+	WeaponPreference = sg556
+	WeaponPreference = negev
+	WeaponPreference = galilar
+	WeaponPreference = famas
+	WeaponPreference = m249
+	WeaponPreference = scar20
+	WeaponPreference = g3sg1
+	WeaponPreference = awp
+End
+
+Template RifleT	
+	WeaponPreference = ak47
+	WeaponPreference = m4a1
+	WeaponPreference = sg556
+	WeaponPreference = aug
+	WeaponPreference = negev
+	WeaponPreference = galilar
+	WeaponPreference = famas
+	WeaponPreference = m249
+	WeaponPreference = g3sg1
+	WeaponPreference = scar20
+	WeaponPreference = awp
+End
+
+Template Punch
+	WeaponPreference = sg556
+	WeaponPreference = aug
+	WeaponPreference = m4a1
+	WeaponPreference = ak47
+	WeaponPreference = negev
+	WeaponPreference = m249
+	WeaponPreference = scar20
+	WeaponPreference = g3sg1
+	WeaponPreference = awp
+	WeaponPreference = galilar
+	WeaponPreference = famas
+End
+
+Template PunchT	
+	WeaponPreference = sg556
+	WeaponPreference = aug
+	WeaponPreference = ak47
+	WeaponPreference = m4a1
+	WeaponPreference = negev
+	WeaponPreference = m249
+	WeaponPreference = scar20
+	WeaponPreference = g3sg1
+	WeaponPreference = awp
+	WeaponPreference = galilar
+	WeaponPreference = famas
+End
+
+Template Sniper	
+	WeaponPreference = awp
+	WeaponPreference = scar20
+	WeaponPreference = g3sg1
+	WeaponPreference = ssg08
+	WeaponPreference = sg556
+	WeaponPreference = deagle
+	WeaponPreference = aug
+	WeaponPreference = ak47
+	WeaponPreference = m4a1
+	WeaponPreference = galilar
+	WeaponPreference = famas
+End
+
+Template Power	
+	WeaponPreference = m249
+	WeaponPreference = negev
+	WeaponPreference = xm1014
+	WeaponPreference = nova
+	WeaponPreference = sawedoff
+	WeaponPreference = mag7
+	WeaponPreference = scar20
+	WeaponPreference = g3sg1
+	WeaponPreference = ak47
+	WeaponPreference = m4a1
+	WeaponPreference = sg556
+	WeaponPreference = aug
+	WeaponPreference = awp
+	WeaponPreference = galilar
+	WeaponPreference = famas
+End
+
+Template AutoSniper
+	WeaponPreference = scar20
+	WeaponPreference = g3sg1
+	WeaponPreference = awp
+	WeaponPreference = m4a1
+	WeaponPreference = ak47
+	WeaponPreference = sg556
+	WeaponPreference = aug
+	WeaponPreference = negev
+	WeaponPreference = galilar
+	WeaponPreference = famas
+	WeaponPreference = ssg08
+End
+
+Template Spray
+	WeaponPreference = p90
+	WeaponPreference = mp7
+	WeaponPreference = mp9
+	WeaponPreference = mac10
+	WeaponPreference = tec9
+	WeaponPreference = fn57
+	WeaponPreference = negev
+	WeaponPreference = m4a1
+	WeaponPreference = ak47
+	WeaponPreference = aug
+	WeaponPreference = sg556
+	WeaponPreference = galilar
+	WeaponPreference = famas
+End
+
+Template Sherklastic
+	WeaponPreference = negev
+	WeaponPreference = xm1014
+	WeaponPreference = nova
+	WeaponPreference = deagle
+	WeaponPreference = p250
+	WeaponPreference = taser
+End
+
+Template Pistolier
+	WeaponPreference = deagle
+	WeaponPreference = tec9
+	WeaponPreference = fn57
+	WeaponPreference = nova
+	WeaponPreference = sawedoff
+	WeaponPreference = mag7
+	WeaponPreference = ump45
+	WeaponPreference = ssg08
+End
+
+// skill templates
+Template Elite
+	Skill = 100
+	Rank = 1800
+	Aggression = 90
+	ReactionTime = 0.1
+	Cost = 3
+	Difficulty = EXPERT
+	VoicePitch = 85
+	AimFocusInitial = 0.3
+	AimFocusDecay = 0.1
+	AimFocusOffsetScale = 0.05
+	AimfocusInterval = 0.05
+End
+
+Template Expert
+	Skill = 95
+	Rank = 1600
+	Aggression = 75
+	ReactionTime = 0.20
+	Cost = 3
+	Difficulty = EXPERT
+	VoicePitch = 88
+	AimFocusInitial = 1
+	AimFocusDecay = 0.2
+	AimFocusOffsetScale = 0.15
+	AimfocusInterval = 0.20
+End
+
+Template VeryHard
+	Skill = 90
+	Rank = 1400
+	Aggression = 80
+	ReactionTime = 0.25
+	Cost = 2
+	Difficulty = HARD
+	VoicePitch = 92
+	AimFocusInitial = 2
+	AimFocusDecay = 0.3
+	AimFocusOffsetScale = 0.17
+	AimfocusInterval = 0.30
+End
+
+Template Hard
+	Skill = 85
+	Rank = 1300
+	Aggression = 70
+	ReactionTime = 0.30
+	Cost = 2
+	Difficulty = HARD
+	VoicePitch = 94
+	AimFocusInitial = 3
+	AimFocusDecay = 0.4
+	AimFocusOffsetScale = 0.20
+	AimfocusInterval = 0.40
+End
+
+Template Tough
+	Skill = 80
+	Rank = 1100
+	Aggression = 60
+	ReactionTime = 0.35
+	Cost = 1
+	Difficulty = HARD
+	VoicePitch = 96
+	AimFocusInitial = 4
+	AimFocusDecay = 0.4
+	AimFocusOffsetScale = 0.25
+	AimfocusInterval = 0.50
+End
+
+Template Normal
+	Skill = 75
+	Rank = 1000
+	Aggression = 80
+	ReactionTime = 0.40
+	Cost = 1
+	Difficulty = NORMAL
+	AimFocusInitial = 5
+	AimFocusDecay = 0.5
+	AimFocusOffsetScale = 0.35
+	AimfocusInterval = 0.60
+End
+
+Template Fair
+	Skill = 70
+	Rank = 850
+	Aggression = 70
+	ReactionTime = 0.45
+	Cost = 1
+	Difficulty = NORMAL
+	VoicePitch = 105
+	AimFocusInitial = 6
+	AimFocusDecay = 0.6
+	AimFocusOffsetScale = 0.5
+	AimfocusInterval = 0.70
+End
+
+Template Easy
+	Skill = 65
+	Rank = 600
+	Aggression = 60
+	ReactionTime = 0.50
+	Cost = 1
+	Difficulty = EASY
+	VoicePitch = 110
+	AimFocusInitial = 7
+	AimFocusDecay = 0.7
+	AimFocusOffsetScale = 0.6
+	AimfocusInterval = 0.70
+End
+
+//----------------------------------------------------------------------------
+//
+// These are the individual bot profiles, which inherit first from 
+// Default and then the specified Template(s), in order
+//
+
+Elite+Punch+PunchPersonality "Negev Sniper"
+	Skin = 1
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonality Tod
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+AutoSniper+AutoSniperPersonality Dad
+	Skin = 2
+	VoicePitch = 105
+End
+
+Elite+Rifle+RiflePersonality Squid
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+Rifle+RiflePersonality "Report N"
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+Rifle+RiflePersonality Zuck
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+Shotgun+ShotgunPersonality Connor
+	Skin = 4
+	VoicePitch = 84
+End
+
+Elite+Punch+PunchPersonality Mesk
+	Skin = 4
+	VoicePitch = 110
+End
+
+Elite+Power+PowerPersonality Obama
+	Skin = 2
+	VoicePitch = 80
+End
+
+Elite+Sherklastic+SherklasticPersonality Guss
+	Skin = 4
+	VoicePitch = 90
+End
+
+Elite+AutoSniper+AutoSniperPersonality N
+	Skin = 2
+	VoicePitch = 98
+End
+
+Elite+Rifle+RiflePersonalityT Mongo
+	Skin = 1
+	VoicePitch = 96
+End
+
+Elite+Sniper+SniperPersonality Cucko
+	Skin = 3
+	VoicePitch = 105
+End
+
+Elite+Punch+PunchPersonality Smash
+	Skin = 3
+	VoicePitch = 115
+End
+
+Elite+Rifle+RiflePersonalityT AAAAA
+	Skin = 1
+	VoicePitch = 84
+End
+
+Elite+Punch+PunchPersonalityT Caw
+	Skin = 4
+	VoicePitch = 86
+End
+
+Elite+Pistolier+PistolierPersonality American
+	Skin = 4
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonality MAN
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+AutoSniper+AutoSniperPersonality "OO OO OO"
+	Skin = 2
+	VoicePitch = 105
+End
+
+Elite+Shotgun+ShotgunPersonality CHECKMEOUTONINSTAGRAM
+	Skin = 4
+	VoicePitch = 84
+End
+
+Elite+Punch+PunchPersonality POGGERS
+	Skin = 4
+	VoicePitch = 110
+End
+
+Elite+Power+PowerPersonality "Elon Mesk"
+	Skin = 2
+	VoicePitch = 80
+End
+
+Elite+Sherklastic+SherklasticPersonality Hiway
+	Skin = 4
+	VoicePitch = 90
+End
+
+Elite+AutoSniper+AutoSniperPersonality N?
+	Skin = 2
+	VoicePitch = 98
+End
+
+Elite+Rifle+RiflePersonalityT N!
+	Skin = 1
+	VoicePitch = 96
+End
+
+Elite+Sniper+SniperPersonality N...
+	Skin = 3
+	VoicePitch = 105
+End
+
+Elite+Punch+PunchPersonality woah
+	Skin = 3
+	VoicePitch = 115
+End
+
+Elite+Rifle+RiflePersonalityT xD
+	Skin = 1
+	VoicePitch = 84
+End
+
+Elite+Punch+PunchPersonalityT CAWPHECY
+	Skin = 4
+	VoicePitch = 86
+End
+
+Elite+Pistolier+PistolierPersonality "Banana Bread"
+	Skin = 4
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonalityT Jozef
+	VoicePitch = 85
+End
+
+Elite+Rifle+RiflePersonality Veeq7
+	VoicePitch = 100
+End
+
+Elite+Punch+PunchPersonality Dog
+	VoicePitch = 95
+End
+
+Elite+Sniper+SniperPersonality Pissporn
+	Cost = 5
+	VoicePitch = 115
+End
+
+Elite+Shotgun+ShotgunPersonality Jackin
+	VoicePitch = 87
+End
+
+Elite+Rifle+RiflePersonality SOY
+	VoicePitch = 91
+End
+
+Elite+Rifle+RiflePersonality Cullen
+	VoicePitch = 101
+End
+
+Elite+Sherklastic+SherklasticPersonality Bongo
+	VoicePitch = 112
+End
+
+Elite+Punch+PunchPersonalityT BingBingBing
+	VoicePitch = 99
+End
+
+Elite+Rifle+RiflePersonality Pizza
+	VoicePitch = 100
+End
+
+Elite+Pistolier+PistolierPersonality Yellowbelly
+	Skin = 4
+	VoicePitch = 100
+End
+
+Elite+Pistolier+PistolierPersonality Bumhaver
+	Skin = 4
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonalityT PogChamp
+	VoicePitch = 85
+End
+
+Elite+Rifle+RiflePersonality Ray-Man
+	VoicePitch = 100
+End
+
+Elite+Punch+PunchPersonality Bark
+	VoicePitch = 95
+End
+
+Elite+Sniper+SniperPersonality Anime
+	Cost = 5
+	VoicePitch = 115
+End
+
+Elite+Shotgun+ShotgunPersonality "u, u u, u, u"
+	VoicePitch = 87
+End
+
+Elite+Rifle+RiflePersonality "A Father"
+	VoicePitch = 91
+End
+
+Elite+Rifle+RiflePersonality Mwah
+	VoicePitch = 101
+End
+
+Elite+Sherklastic+SherklasticPersonality "call_me_hand"
+	VoicePitch = 112
+End
+
+Elite+Punch+PunchPersonalityT "Clown Emoji"
+	VoicePitch = 99
+End
+
+Elite+Rifle+RiflePersonality Chicken
+	VoicePitch = 100
+End
+
+Elite+Pistolier+PistolierPersonality "KING DONG"
+	Skin = 4
+	VoicePitch = 100
+End
+
+Elite+Pistolier+PistolierPersonality Canadian
+	Skin = 4
+	VoicePitch = 100
+End
+
+Elite+Power+PowerPersonality Tony
+	Skin = 1
+	VoicePitch = 110
+End
+
+Elite+Sniper+SniperPersonality "MIKE!!!"
+	Skin = 3
+	VoicePitch = 93
+End
+
+Elite+Rifle+RiflePersonality Prank
+	Skin = 2
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonalityT Aleksandar
+	Skin = 4
+	VoicePitch = 86
+End
+
+Elite+Pistolier+PistolierPersonality gatgatgat
+	Skin = 4
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonality DarkenedFantasies
+	Skin = 1
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonality RimTechCombot
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+Rifle+RiflePersonalityT UEDCommander
+	Skin = 2
+	VoicePitch = 90
+End
+
+Elite+AutoSniper+AutoSniperPersonality BOOMBABY
+	Skin = 4
+	VoicePitch = 102
+End
+
+Elite+Shotgun+ShotgunPersonality Fank
+	Skin = 1
+	VoicePitch = 98
+End
+
+Elite+Rifle+RiflePersonalityT Igor
+	Skin = 2
+	VoicePitch = 96
+End
+
+Elite+Punch+PunchPersonality Heyman
+	Skin = 4
+	VoicePitch = 103
+End
+
+Elite+Punch+PunchPersonalityT "Joe Rogan"
+	Skin = 1
+	VoicePitch = 105
+End
+
+Elite+Rifle+RiflePersonality Todd
+	Skin = 2
+	VoicePitch = 97
+End
+
+Elite+Rifle+RiflePersonality Toninsky
+	Skin = 4
+	VoicePitch = 84
+End
+
+Elite+Punch+PunchPersonalityT Earthquake
+	Skin = 1
+	VoicePitch = 90
+End
+
+Elite+Rifle+RiflePersonality Cock
+	Skin = 2
+	VoicePitch = 98
+End
+
+Elite+Sniper+SniperPersonality Putin
+	Skin = 3
+	VoicePitch = 110
+End
+
+Elite+AutoSniper+AutoSniperPersonality "Pete Zigger"
+	Skin = 4
+	VoicePitch = 103
+End
+
+Elite+Rifle+RiflePersonality Hitler
+	Skin = 2
+	VoicePitch = 110
+End
+
+Elite+Pistolier+PistolierPersonality TODSDADPAT
+	Skin = 4
+	VoicePitch = 100
+End
+
+Elite+Sniper+SniperPersonality "Samir Penis"
+	Skin = 3
+	VoicePitch = 33
+End
+
+Elite+Sniper+SniperPersonality JFK
+	Skin = 3
+	VoicePitch = 120
+End
+
+Elite+Sniper+SniperPersonality Razorback
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+Rifle+RiflePersonality Metathrom
+	Skin = 1
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonality Amon
+	Skin = 2
+	VoicePitch = 104
+End
+
+Elite+Rifle+RiflePersonalityT "Dark Metzen"
+	Skin = 4
+	VoicePitch = 98
+End
+
+Elite+Rifle+RiflePersonality Baelethal
+	Skin = 2
+	VoicePitch = 102
+End
+
+Elite+Rifle+RiflePersonality Hoop_Thrower
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+Rifle+RiflePersonalityT FUCK
+	Skin = 2
+	VoicePitch = 110
+End
+
+Elite+Rifle+RiflePersonality no
+	Skin = 4
+	VoicePitch = 112
+End
+
+Elite+Sherklastic+SherklasticPersonality BingBong
+	Skin = 1
+	VoicePitch = 90
+End
+
+Elite+Rifle+RiflePersonality lucifirius
+	Skin = 2
+	VoicePitch = 115
+End
+
+Elite+Rifle+RiflePersonalityT Browder
+	Skin = 4
+	VoicePitch = 107
+End
+
+Elite+Rifle+RiflePersonality Ricky
+	Skin = 2
+	VoicePitch = 102
+End
+
+Elite Moron
+	Skin = 1
+	VoicePitch = 98
+End
+
+Elite+Rifle+RiflePersonality Demonitized
+	Skin = 2
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonalityT Idiot
+	Skin = 4
+	VoicePitch = 95
+End
+
+Elite+Rifle+RiflePersonality "Taking a Shit"
+	Skin = 1
+	VoicePitch = 86
+End
+
+Elite+Rifle+RiflePersonalityT Mongoloid
+	Skin = 2
+	VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonality Khabib
+	Skin = 4
+	VoicePitch = 95
+End
+
+Elite+Rifle+RiflePersonality Wucker
+	Skin = 1
+	VoicePitch = 105
+End
+
+Elite Mynameislol
+	Skin = 4
+	VoicePitch = 107
+End
+
+Elite U
+	Skin = 2
+	VoicePitch = 110
+End
+
+Elite+Sniper+SniperPersonality bird
+	Skin = 2
+	VoicePitch = 110
+End
+
+Elite Crow
+	Skin = 3
+	VoicePitch = 95
+End
+
+Elite Cawcawphony
+	Skin = 4
+	VoicePitch = 112
+End
+
+Elite Fraud
+	Skin = 1
+	VoicePitch = 111
+End
+
+Elite+Sniper+SniperPersonality "skin-tone-dad"
+	Skin = 3
+	VoicePitch = 115
+End
+
+Elite Jesus
+	Skin = 4
+	VoicePitch = 112
+End
+
+Elite Mom
+	Skin = 1
+	VoicePitch = 96
+End
+
+Elite "Acheron Agent"
+	Skin = 2
+	VoicePitch = 98
+End
+
+Elite Mark
+	Skin = 4
+	VoicePitch = 110
+End
+
+Elite Punch
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+Rifle+RiflePersonalityT Golf
+	Skin = 2
+	VoicePitch = 100
+End
+
+Elite Colon
+	Skin = 2
+	VoicePitch = 115
+End
+
+Elite Monkey
+	Skin = 4
+	VoicePitch = 92
+End
+
+Elite Ape
+	VoicePitch = 110
+End
+
+Elite Harambe
+	VoicePitch = 100
+End
+
+Elite Cucker
+	VoicePitch = 99
+End
+
+Elite+AutoSniper+AutoSniperPersonality Dynamo
+	VoicePitch = 120
+End
+
+Elite iquare
+	VoicePitch = 111
+End
+
+Elite Heyriggan
+	VoicePitch = 98
+End
+
+Elite "lowercase n"
+	VoicePitch = 112
+End
+
+Elite WUCK
+	VoicePitch = 90
+End
+
+Elite Hacker
+	VoicePitch = 120
+End
+
+Elite "Meat Torpedo"
+	VoicePitch = 118
+End
+
+Elite "Golfing Skeleton"
+	VoicePitch = 116
+End
+
+Elite+AutoSniper+AutoSniperPersonality "Leather Club Owner"
+	VoicePitch = 112
+End
+
+Elite+Rifle+RiflePersonality "James Raynor"
+	VoicePitch = 114
+End
+
+Elite Mareq
+	VoicePitch = 110
+End
+
+Elite Bum
+	VoicePitch = 98
+End
+
+Elite Bioskull
+	VoicePitch = 92
+End
+
+Elite Mongomin
+	VoicePitch = 113
+End
+
+Elite "Patrick Stanley"
+	VoicePitch = 114
+End
+
+Elite MCMXCIX
+	VoicePitch = 115
+End
+
+Elite Ackmed
+	VoicePitch = 100
+End
+
+Elite "Chuck the Cuck"
+	VoicePitch = 102
+End
+
+Elite "Tony the Canoli"
+	VoicePitch = 98
+End
+
+Elite "Flame Spike the Cawler"
+	VoicePitch = 96
+End
+
+Elite "u actually"
+	VoicePitch = 94
+End
+
+Elite Pozz
+	VoicePitch = 110
+End
+
+Elite "Ass Transplant"
+	VoicePitch = 120
+End
+
+Elite Bearblower
+	VoicePitch = 110
+End
+
+Elite Bumsnatcher
+	VoicePitch = 121
+End
+
+Elite "the Cool Cerebrate"
+	VoicePitch = 118
+End
+
+Elite CHAD
+	VoicePitch = 116
+End
+
+Elite Brightanus
+	VoicePitch = 111
+End
+
+Elite Bananner
+	VoicePitch = 109
+End
+
+Elite Boron
+	VoicePitch = 108
+End
+
+Elite Dickdwarf
+	VoicePitch = 120
+End
+
+Elite "Bum Wa He Da Lo"
+	VoicePitch = 125
+End
+
+Elite Todny
+	VoicePitch = 95
+End
+
+Elite Thorin
+	VoicePitch = 100
+End
+
+Elite Rawflesh
+	VoicePitch = 104
+End
+
+Elite "Bonzi Buddy"
+	VoicePitch = 95
+End
+
+Elite Allah
+	VoicePitch = 100
+End
+
+Elite Todbringer
+	VoicePitch = 120
+End
+
+Elite "Richard Lewis"
+	VoicePitch = 99
+End
+
+Elite Spin
+	VoicePitch = 110
+End
+
+Elite Swana
+	VoicePitch = 110
+End
+
+//----------------------------------------
+
+Expert+Rifle+RiflePersonalityT Jozef
+	VoicePitch = 85
+End
+
+Expert+Rifle+RiflePersonality Veeq7
+	VoicePitch = 100
+End
+
+Expert+Punch+PunchPersonality Dog
+	VoicePitch = 95
+End
+
+Expert+Sniper+SniperPersonality Pissporn
+	Cost = 5
+	VoicePitch = 115
+End
+
+Expert+Shotgun+ShotgunPersonality Jackin
+	VoicePitch = 87
+End
+
+Expert+Rifle+RiflePersonality SOY
+	VoicePitch = 91
+End
+
+Expert+Rifle+RiflePersonality Cullen
+	VoicePitch = 101
+End
+
+Expert+Sherklastic+SherklasticPersonality Bongo
+	VoicePitch = 112
+End
+
+Expert+Punch+PunchPersonalityT BingBingBing
+	VoicePitch = 99
+End
+
+Expert+Rifle+RiflePersonality Pizza
+	VoicePitch = 100
+End
+
+Expert+Pistolier+PistolierPersonality Yellowbelly
+	Skin = 4
+	VoicePitch = 100
+End
+
+Expert+Pistolier+PistolierPersonality Bumhaver
+	Skin = 4
+	VoicePitch = 100
+End
+
+Expert+Rifle+RiflePersonalityT PogChamp
+	VoicePitch = 85
+End
+
+Expert+Rifle+RiflePersonality Ray-Man
+	VoicePitch = 100
+End
+
+Expert+Punch+PunchPersonality Bark
+	VoicePitch = 95
+End
+
+Expert+Sniper+SniperPersonality Anime
+	Cost = 5
+	VoicePitch = 115
+End
+
+Expert+Shotgun+ShotgunPersonality "u, u u, u, u"
+	VoicePitch = 87
+End
+
+Expert+Rifle+RiflePersonality "A Father"
+	VoicePitch = 91
+End
+
+Expert+Rifle+RiflePersonality Mwah
+	VoicePitch = 101
+End
+
+Expert+Sherklastic+SherklasticPersonality "call_me_hand"
+	VoicePitch = 112
+End
+
+Expert+Punch+PunchPersonalityT "Clown Emoji"
+	VoicePitch = 99
+End
+
+Expert+Rifle+RiflePersonality Chicken
+	VoicePitch = 100
+End
+
+Expert+Pistolier+PistolierPersonality "KING DONG"
+	Skin = 4
+	VoicePitch = 100
+End
+
+Expert+Pistolier+PistolierPersonality Canadian
+	Skin = 4
+	VoicePitch = 100
+End
+
+//----------------------------------------
+
+VeryHard+Power+PowerPersonality Tony
+	Skin = 1
+	VoicePitch = 110
+End
+
+VeryHard+Sniper+SniperPersonality "MIKE!!!"
+	Skin = 3
+	VoicePitch = 93
+End
+
+VeryHard+Rifle+RiflePersonality Prank
+	Skin = 2
+	VoicePitch = 100
+End
+
+VeryHard+Rifle+RiflePersonalityT Aleksandar
+	Skin = 4
+	VoicePitch = 86
+End
+
+VeryHard+Pistolier+PistolierPersonality gatgatgat
+	Skin = 4
+	VoicePitch = 100
+End
+
+//----------------------------------------
+
+Hard+Rifle+RiflePersonality DarkenedFantasies
+	Skin = 1
+	VoicePitch = 100
+End
+
+Hard+Rifle+RiflePersonality RimTechCombot
+	Skin = 1
+	VoicePitch = 95
+End
+
+Hard+Rifle+RiflePersonalityT UEDCommander
+	Skin = 2
+	VoicePitch = 90
+End
+
+Hard+AutoSniper+AutoSniperPersonality BOOMBABY
+	Skin = 4
+	VoicePitch = 102
+End
+
+Hard+Shotgun+ShotgunPersonality Fank
+	Skin = 1
+	VoicePitch = 98
+End
+
+Hard+Rifle+RiflePersonalityT Igor
+	Skin = 2
+	VoicePitch = 96
+End
+
+Hard+Punch+PunchPersonality Heyman
+	Skin = 4
+	VoicePitch = 103
+End
+
+Hard+Punch+PunchPersonalityT "Joe Rogan"
+	Skin = 1
+	VoicePitch = 105
+End
+
+Hard+Rifle+RiflePersonality Todd
+	Skin = 2
+	VoicePitch = 97
+End
+
+Hard+Rifle+RiflePersonality Toninsky
+	Skin = 4
+	VoicePitch = 84
+End
+
+Hard+Punch+PunchPersonalityT Earthquake
+	Skin = 1
+	VoicePitch = 90
+End
+
+Hard+Rifle+RiflePersonality Cock
+	Skin = 2
+	VoicePitch = 98
+End
+
+Hard+Sniper+SniperPersonality Putin
+	Skin = 3
+	VoicePitch = 110
+End
+
+Hard+AutoSniper+AutoSniperPersonality "Pete Zigger"
+	Skin = 4
+	VoicePitch = 103
+End
+
+Hard+Rifle+RiflePersonality Hitler
+	Skin = 2
+	VoicePitch = 110
+End
+
+Hard+Pistolier+PistolierPersonality TODSDADPAT
+	Skin = 4
+	VoicePitch = 100
+End
+
+Hard+Sniper+SniperPersonality "Samir Penis"
+	Skin = 3
+	VoicePitch = 33
+End
+
+//----------------------------------------
+
+Tough+Sniper+SniperPersonality JFK
+	Skin = 3
+	VoicePitch = 120
+End
+
+Tough+Sniper+SniperPersonality Razorback
+	Skin = 1
+	VoicePitch = 95
+End
+
+Tough+Rifle+RiflePersonality Metathrom
+	Skin = 1
+	VoicePitch = 100
+End
+
+Tough+Rifle+RiflePersonality Amon
+	Skin = 2
+	VoicePitch = 104
+End
+
+Tough+Rifle+RiflePersonalityT "Dark Metzen"
+	Skin = 4
+	VoicePitch = 98
+End
+
+Tough+Sherklastic+SherklasticPersonality Roper
+	Skin = 1
+	VoicePitch = 100
+End
+
+Tough+Rifle+RiflePersonality Baelethal
+	Skin = 2
+	VoicePitch = 102
+End
+
+Tough+Shotgun+ShotgunPersonality don_svetlio
+	Skin = 4
+	VoicePitch = 95
+End
+
+Tough+Rifle+RiflePersonality Hoop_Thrower
+	Skin = 1
+	VoicePitch = 95
+End
+
+Tough+Rifle+RiflePersonalityT FUCK
+	Skin = 2
+	VoicePitch = 110
+End
+
+Tough+Rifle+RiflePersonality no
+	Skin = 4
+	VoicePitch = 112
+End
+
+Tough+Sherklastic+SherklasticPersonality BingBong
+	Skin = 1
+	VoicePitch = 90
+End
+
+Tough+Rifle+RiflePersonality lucifirius
+	Skin = 2
+	VoicePitch = 115
+End
+
+Tough+Rifle+RiflePersonalityT Browder
+	Skin = 4
+	VoicePitch = 107
+End
+
+Tough+Rifle+RiflePersonality Ricky
+	Skin = 2
+	VoicePitch = 102
+End
+
+Tough Moron
+	Skin = 1
+	VoicePitch = 98
+End
+
+Tough+Rifle+RiflePersonality Demonitized
+	Skin = 2
+	VoicePitch = 100
+End
+
+Tough+Rifle+RiflePersonalityT Idiot
+	Skin = 4
+	VoicePitch = 95
+End
+
+Tough+Rifle+RiflePersonality "Taking a Shit"
+	Skin = 1
+	VoicePitch = 86
+End
+
+Tough+Rifle+RiflePersonalityT Mongoloid
+	Skin = 2
+	VoicePitch = 100
+End
+
+Tough+Rifle+RiflePersonality Khabib
+	Skin = 4
+	VoicePitch = 95
+End
+
+//----------------------------------------
+
+Normal+Rifle+RiflePersonality Wucker
+	Skin = 1
+	VoicePitch = 105
+End
+
+Normal+Punch+PunchPersonalityT Ivo
+	Skin = 2
+	VoicePitch = 90
+End
+
+Normal Excalibur
+	Skin = 3
+	VoicePitch = 100
+End
+
+Normal Mynameislol
+	Skin = 4
+	VoicePitch = 107
+End
+
+Normal+Rifle+RiflePersonality "Riot Games"
+	Skin = 1
+	VoicePitch = 104
+End
+
+Normal U
+	Skin = 2
+	VoicePitch = 110
+End
+
+Normal+Sniper+SniperPersonality bird
+	Skin = 2
+	VoicePitch = 110
+End
+
+Normal Crow
+	Skin = 3
+	VoicePitch = 95
+End
+
+Normal Cawcawphony
+	Skin = 4
+	VoicePitch = 112
+End
+
+Normal Fraud
+	Skin = 1
+	VoicePitch = 111
+End
+
+Normal+Sniper+SniperPersonality "skin-tone-dad"
+	Skin = 3
+	VoicePitch = 115
+End
+
+Normal Jesus
+	Skin = 4
+	VoicePitch = 112
+End
+
+Normal Mom
+	Skin = 1
+	VoicePitch = 96
+End
+
+Normal "Acheron Agent"
+	Skin = 2
+	VoicePitch = 98
+End
+
+Normal Mark
+	Skin = 4
+	VoicePitch = 110
+End
+
+Normal Punch
+	Skin = 1
+	VoicePitch = 95
+End
+
+Normal+Rifle+RiflePersonalityT Golf
+	Skin = 2
+	VoicePitch = 100
+End
+
+Normal AIDS
+	Skin = 4
+	VoicePitch = 99
+End
+
+Normal Cancer
+	Skin = 3
+	VoicePitch = 98
+End
+
+Normal Diabetes
+	Skin = 1
+	VoicePitch = 105
+End
+
+Normal Colon
+	Skin = 2
+	VoicePitch = 115
+End
+
+Normal Pitfetus
+	Skin = 3
+	VoicePitch = 110
+End
+
+Normal Monkey
+	Skin = 4
+	VoicePitch = 92
+End
+
+//----------------------------------------
+
+Fair Ape
+	VoicePitch = 110
+End
+
+Fair Harambe
+	VoicePitch = 100
+End
+
+Fair Cucker
+	VoicePitch = 99
+End
+
+Fair+AutoSniper+AutoSniperPersonality Dynamo
+	VoicePitch = 120
+End
+
+Fair iquare
+	VoicePitch = 111
+End
+
+Fair Heyriggan
+	VoicePitch = 98
+End
+
+Fair "lowercase n"
+	VoicePitch = 112
+End
+
+Fair WUCK
+	VoicePitch = 90
+End
+
+Fair Hacker
+	VoicePitch = 120
+End
+
+Fair "Meat Torpedo"
+	VoicePitch = 118
+End
+
+Fair "Golfing Skeleton"
+	VoicePitch = 116
+End
+
+Fair+AutoSniper+AutoSniperPersonality "Leather Club Owner"
+	VoicePitch = 112
+End
+
+Fair+Rifle+RiflePersonality "James Raynor"
+	VoicePitch = 114
+End
+
+Fair Mareq
+	VoicePitch = 110
+End
+
+Fair Bum
+	VoicePitch = 98
+End
+
+Fair Bioskull
+	VoicePitch = 92
+End
+
+Fair Mongomin
+	VoicePitch = 113
+End
+
+Fair "Patrick Stanley"
+	VoicePitch = 114
+End
+
+Fair MCMXCIX
+	VoicePitch = 115
+End
+
+Fair Ackmed
+	VoicePitch = 100
+End
+
+Fair "Chuck the Cuck"
+	VoicePitch = 102
+End
+
+Fair "Tony the Canoli"
+	VoicePitch = 98
+End
+
+Fair "Flame Spike the Cawler"
+	VoicePitch = 96
+End
+
+Fair "u actually"
+	VoicePitch = 94
+End
+
+//----------------------------------------
+
+Easy "Hugh Jazz"
+	VoicePitch = 100
+End
+
+Easy Pozz
+	VoicePitch = 110
+End
+
+Easy "Ass Transplant"
+	VoicePitch = 120
+End
+
+Easy Dick
+	VoicePitch = 99
+End
+
+Easy "Mike Hawk"
+	VoicePitch = 120
+End
+
+Easy "Lewis Bowels"
+	VoicePitch = 125
+End
+
+Easy "Bearblower?!"
+	VoicePitch = 110
+End
+
+Easy "Hunk Hogo"
+	VoicePitch = 100
+End
+
+Easy "Punk Buster"
+	VoicePitch = 112
+End
+
+Easy Bumsnatcher
+	VoicePitch = 121
+End
+
+Easy "Todd Howard"
+	VoicePitch = 99
+End
+
+Easy Bob
+	VoicePitch = 119
+End
+
+Easy "the Cool Cerebrate"
+	VoicePitch = 118
+End
+
+Easy "Fluffy Flapping Flamingo"
+	VoicePitch = 117
+End
+
+Easy CHAD
+	VoicePitch = 116
+End
+
+Easy "Fat Fucking Dickman"
+	VoicePitch = 115
+End
+
+Easy Jayborino
+	VoicePitch = 114
+End
+
+Easy DeltronLive
+	VoicePitch = 112
+End
+
+Easy Brightanus
+	VoicePitch = 111
+End
+
+Easy Goatdarkener
+	VoicePitch = 105
+End
+
+Easy "A Father"
+	VoicePitch = 110
+End
+
+Easy Bananner
+	VoicePitch = 109
+End
+
+Easy Boron
+	VoicePitch = 108
+End
+
+Easy Bingo
+	VoicePitch = 122
+End
+
+Easy Dickdwarf
+	VoicePitch = 120
+End
+
+Easy "Bum Wa He Da Lo"
+	VoicePitch = 125
+End
+
+Easy Todny
+	VoicePitch = 95
+End
+
+Easy Pr0nogo
+	VoicePitch = 92
+End
+
+Easy Thorin
+	VoicePitch = 100
+End
+
+Easy "Hardening Underanus"
+	VoicePitch = 102
+End
+
+Easy Rawflesh
+	VoicePitch = 104
+End
+
+Easy Daniel
+	VoicePitch = 108
+End
+
+Easy "Bonzi Buddy"
+	VoicePitch = 95
+End
+
+Easy Allah
+	VoicePitch = 100
+End
+
+Easy Todbringer
+	VoicePitch = 120
+End
+
+Easy "Old Yu"
+	VoicePitch = 112
+End
+
+Easy "Richard Lewis"
+	VoicePitch = 99
+End
+
+Easy Spin
+	VoicePitch = 110
+End
